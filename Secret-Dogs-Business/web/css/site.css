@@ -1,13 +1,10 @@
+a{
+    text-decoration: none !important;
+}
+
 html,
 body {
     height: 100%;
-}
-
-.wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto -60px;
-    padding: 0 0 60px;
 }
 
 .wrap > .container {
@@ -26,7 +23,7 @@ body {
     background-color: transparent;
 }
 
-.jumbotron .btn {
+.jumbotron .#line {
     font-size: 21px;
     padding: 14px 24px;
 }
@@ -90,26 +87,251 @@ a.desc:after {
     margin: 0 0 15px 0;
 }
 
-/* align the logout "link" (button in form) of the navbar */
-.nav li > form > button.logout {
-    padding: 15px;
-    border: none;
+
+/* My stuff */
+
+
+.blue{
+    background-color: #354264;
+}
+.blue:hover{
+    background-color: #232c43;
 }
 
-@media(max-width:767px) {
-    .nav li > form > button.logout {
-        display:block;
-        text-align: left;
-        width: 100%;
-        padding: 10px 15px;
-    }
+.nav{
+    width: 100%;
+    background-color: #354264DD;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    position: fixed;
 }
-
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
+.nav-top{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    transition: 0.3s;
+}
+.nav-mobile{
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.3s;
+    z-index:2;
+    background-color: #354264;
+}
+.nav-mobile.active{
+    left: 0;
+    transition: 0.3s;
+}
+.nav-item{
+    padding: 20px 32px;
+    font-size: 18px;
+    color: #fff;
+    font-family: "Lato";
+    font-weight: 400;
     text-decoration: none;
 }
+.nav-button{
+    text-decoration: none;
+    color: #fff;
+}
+.nav-button-mobile{
+    text-decoration: none;
+    color: #fff;
+    width:100%;
+}
+.nav-item:hover{
+    background-color: #232c43;
+}
+.hamburger{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    z-index:9999;
+}
 
-.nav > li > form > button.logout:focus {
-    outline: none;
+.line{
+    width: 30px;
+    border-bottom: 2px #fff solid;
+    margin-bottom: 10px;
+transition: 0.3s;
+}
+
+div#line1.active{
+    transform: translateY(10px) rotate(45deg);
+    transition: 0.3s;
+}
+div#line2.active{
+    transform: translateX(-300px);
+    transition: 0.3s;
+}
+div#line3.active{
+    transform: translateY(-14px)rotate(-45deg);
+    transition: 0.3s;
+}
+.main{
+    transition:0.3s;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    width:100%;
+}
+.main.active{
+    transform: translateX(70%);
+    transition: 0.3s;
+}
+
+.hero-image{
+    width: 100% !important;
+    height:100vh;
+    /*margin-top:64px;*/
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../images/puppies.jpg");
+    background-color: #00000088;
+    background-position: 20% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 64PX;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none !important;
+    z-index:-1;
+}
+.wrap{
+    z-index:-1
+}
+.content{
+    margin:0 30%;
+}
+.title{
+    font-family:"Roboto-slab", Serif;
+    font-size:32px;
+    font-weight: 400;
+    color: #333;
+    margin: 40px auto;
+}
+.sub-title{
+    font-family:"Lato";
+    font-size:24px;
+    font-weight: 400;
+    color: #354264;
+    margin: 40px auto;
+}
+.half-display{
+    display:flex;
+}
+.content-text{
+    font-size: 18px;
+    font-family: "Lato";
+    font-weight: 300;
+    color: #333;
+    margin: 20px;
+}
+.logo{
+    width: 300px;
+    height: 208px;
+    /*margin-top:64px;*/
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 80px 0 20px 0;
+    min-height: 208px;
+}
+.home{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 60px;
+}
+.home-title{
+    font-family: "Lato";
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000000
+}
+.home-content{
+    background-color: #FFFd;
+    width: 100%;
+    height: 70vh;
+}
+
+.btn{
+    padding: 10px 25px;
+    background-color: #354264;
+    border: 2px #354264 solid;
+    font-size: 24px;
+    font-weight: bold;
+    font-family:"Lato";
+    color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+.btn:hover{
+    color: #354264;
+    background-color: #fff6;
+    transition: 0.3s;
+}
+.btn-inverse{
+    background-color: #fff4;
+    color: #354264;
+    transition: 0.3s;
+}
+.btn-inverse:hover{
+    color: #fff;
+    background-color: #354264dd;
+    transition: 0.3s;
+}
+.buttons{
+    display:flex;
+    flex-direction: column;
+    width: 250px;
+}
+.phone{
+    font-size:52px;
+    color: #fff;
+}
+
+@media screen and (max-width: 960px){
+    .hero-image{
+        background-size: 320%;
+        background-position: 50% 0;
+        top: 0;
+    }
+    .buttons{
+        width: 100%;
+    }
+    .home{
+        height:95vh;
+    }
+    .logo{
+        margin-top: 20px;
+        width: 250px;
+        min-height: 173px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    * {
+        text-align: center;
+    }
+    .phone{
+        color: #fff;
+        font-size: 40px;
+    }
 }
