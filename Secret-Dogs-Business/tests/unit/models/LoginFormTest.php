@@ -10,7 +10,7 @@ class LoginFormTest extends \Codeception\Test\Unit
 
     protected function _after()
     {
-        \Yii::$app->user->logout();
+        //\Yii::$app->user->logout();
     }
 
     public function testLoginNoUser()

@@ -14,7 +14,7 @@ use app\models\ContactForm;
 class BackendController extends Controller
 {
     public $layout = "backend";
-    public $defaultAction = "login";
+    public $defaultAction = "index";
 
 
     public function actionIndex()
@@ -44,19 +44,21 @@ class BackendController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
+
+        if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
 
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->render('index');
+        }
+        else {
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }
     }
 
     /**
